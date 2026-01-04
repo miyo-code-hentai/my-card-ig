@@ -102,11 +102,26 @@
     /* ===================== MOBILE ===================== */
     @media (max-width: 600px) {
         .bento {
+            display: grid;
             grid-template-columns: 1fr;
-            grid-auto-rows: 220px;
-            gap: 10px;
+            gap: 12px;
+
+            /* 🔥 KEY FIX */
+            grid-auto-rows: auto;
         }
 
+        .item {
+            aspect-ratio: 3 / 4; /* 🔥 CONSISTENT CARD SHAPE */
+            border-radius: 14px;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Reset desktop spans */
         .wide,
         .tall {
             grid-column: span 1;

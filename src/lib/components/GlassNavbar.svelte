@@ -78,22 +78,32 @@
             top: 0.8rem;
             left: 50%;
             transform: translateX(-50%);
-            width: calc(100% - 2rem); /* almost full width */
-            max-width: 400px;
-            padding: 0.5rem 1rem;
-            gap: 1rem;
-            border-radius: 12px;
+
+            width: calc(100% - 1.5rem);
+            max-width: 100%;
+
+            padding: 0.6rem 0.8rem;
+
+            display: flex;
+            justify-content: space-between; /* 🔥 FIX */
+            align-items: center;
+
+            gap: 0; /* 🔥 REMOVE GAP */
+
+            border-radius: 14px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
 
         a {
+            flex: 1; /* 🔥 EVEN WIDTH */
+            text-align: center;
             font-size: 0.85rem;
         }
 
         a.active::after {
             width: 5px;
             height: 5px;
-            margin-top: 3px;
+            margin: 4px auto 0;
         }
     }
 </style>
