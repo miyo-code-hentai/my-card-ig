@@ -23,7 +23,7 @@
 				// start ripple
 				setTimeout(() => (ripple = true), 300);
 
-				// show navbar + content AFTER ripple done
+				// show navbar + content + footer AFTER ripple done
 				setTimeout(() => (ready = true), 5300);
 			}
 		}, 40);
@@ -47,7 +47,7 @@
 		{/if}
 	</div>
 
-	<!-- NAVBAR (RENDER SETELAH RIPPLE) -->
+	<!-- NAVBAR (SETELAH RIPPLE) -->
 	{#if ready}
 		<GlassNavbar path={page.url.pathname} />
 	{/if}
@@ -60,19 +60,55 @@
 			</div>
 		</div>
 	{/if}
+
+	<!-- FOOTER (SETELAH RIPPLE) -->
+	{#if ready}
+		<footer class="footer">
+			<p>© 2026 Mi/Yo • and you gay</p>
+		</footer>
+	{/if}
 </div>
 
-<footer class="footer">
-	<p>@ 2026 and this is footer • and you gay</p>
-</footer>
-
 <style>
+	/* ===================== FOOTER BASE ===================== */
 	.footer {
 		position: fixed;
 		bottom: 1rem;
 		left: 50%;
 		transform: translateX(-50%);
+
 		color: rgba(255, 255, 255, 0.75);
 		font-size: 0.8rem;
+		letter-spacing: 0.02em;
+		text-align: center;
+		z-index: 5;
+
+		opacity: 0;
+		animation: footerIn 0.8s ease forwards;
+		animation-delay: 0.2s;
+	}
+
+	@keyframes footerIn {
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* ===================== TABLET ===================== */
+	@media (max-width: 900px) {
+		.footer {
+			font-size: 0.75rem;
+			bottom: 0.8rem;
+		}
+	}
+
+	/* ===================== MOBILE ===================== */
+	@media (max-width: 640px) {
+		.footer {
+			font-size: 0.7rem;
+			bottom: 4.5rem; /* aman dari bottom glass navbar */
+			padding: 0 1rem;
+			width: 100%;
+		}
 	}
 </style>

@@ -8,7 +8,7 @@
 </script>
 
 <div class="top-right">
-    <LiquidGlass width="1000px" height="auto" padding="1rem" center={false}>
+    <LiquidGlass width="1000px" height="400px" padding="1rem" center={false}>
         <h1>My Gallery</h1>
         <p>
             Here are some of my gooning collection some are in bad quality don't

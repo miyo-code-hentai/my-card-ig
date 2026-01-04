@@ -10,7 +10,7 @@
 </nav>
 
 <style>
-    /* ===================== BASE ===================== */
+    /* BASE (Desktop) */
     .glass {
         position: fixed;
         top: 1.4rem;
@@ -64,7 +64,7 @@
         border-radius: 50%;
     }
 
-    /* ===================== TABLET ===================== */
+    /* TABLET */
     @media (max-width: 900px) {
         .glass {
             gap: 2rem;
@@ -72,17 +72,18 @@
         }
     }
 
-    /* ===================== MOBILE ===================== */
+    /* MOBILE FIXED TOP */
     @media (max-width: 640px) {
         .glass {
-            top: auto;
-            bottom: 1rem;
-
-            padding: 0.6rem 1.4rem;
-            gap: 1.4rem;
-
-            border-radius: 999px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            top: 0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 2rem); /* almost full width */
+            max-width: 400px;
+            padding: 0.5rem 1rem;
+            gap: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
 
         a {
