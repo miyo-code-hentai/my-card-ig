@@ -8,12 +8,13 @@
 </script>
 
 <div class="top-right">
-    <LiquidGlass width="1000px" height="400px" padding="1rem" center={false}>
+    <LiquidGlass width="1000px" height="auto" padding="1rem" center={false}>
         <h1>My Gallery</h1>
         <p>
             Here are some of my gooning collection some are in bad quality don't
             ask me why fix it yourself
         </p>
+
         <div class="bento">
             <div class="item tall">
                 <img src={img1} alt="Gallery item 1" />
@@ -39,14 +40,15 @@
 </div>
 
 <style>
+    /* ===================== BASE (DESKTOP) ===================== */
     .bento {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 180px;
         gap: 12px;
-        max-width: 1100px;
-        max-height: 600px;
-        margin: auto;
+
+        max-width: 100%;
+        margin-top: 1rem;
     }
 
     .item {
@@ -60,6 +62,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+
         transition:
             transform 0.6s ease,
             filter 0.6s ease;
@@ -74,9 +77,40 @@
         grid-column: span 2;
     }
 
-    /* Hover Effect */
+    /* Hover */
     .item:hover img {
         transform: scale(1.1);
         filter: brightness(1.1);
+    }
+
+    /* ===================== TABLET ===================== */
+    @media (max-width: 900px) {
+        .bento {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 200px;
+        }
+
+        .wide {
+            grid-column: span 2;
+        }
+
+        .tall {
+            grid-row: span 1;
+        }
+    }
+
+    /* ===================== MOBILE ===================== */
+    @media (max-width: 600px) {
+        .bento {
+            grid-template-columns: 1fr;
+            grid-auto-rows: 220px;
+            gap: 10px;
+        }
+
+        .wide,
+        .tall {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
     }
 </style>
